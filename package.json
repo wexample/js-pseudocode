@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "test": "node test/constant_using_const.test.js"
+    "test": "node tests/constant_using_const.test.js && node tests/function_basic.test.js && node tests/function_complex.test.js && node tests/class_basic_calculator.test.js"
   },
   "devDependencies": {
     "@types/node": "22.7.5"
