@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * A class that performs basic arithmetic operations.
  */

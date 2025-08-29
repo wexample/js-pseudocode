@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Process an array of data with optional configuration.
  *

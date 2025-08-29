@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Calculate the sum of two ints.
  *
