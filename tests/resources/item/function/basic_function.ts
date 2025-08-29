@@ -1,0 +1,11 @@
+// @ts-nocheck
+/**
+ * Calculate the sum of two ints.
+ *
+ * @param a - The first operand.
+ * @param b - The second operand.
+ * @returns: The sum of the two numbers.
+ */
+function add(a, b) {
+  // TODO: Implement function body
+}

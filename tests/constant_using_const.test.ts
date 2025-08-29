@@ -5,11 +5,9 @@ import { CodeGenerator } from '../src/index.ts';
 const resDir = join(process.cwd(), 'tests', 'resources', 'item', 'constant');
 
 function normalizeEol(s: string) { return s.replace(/\r\n/g, '\n'); }
+function stripTsNoCheck(s: string) { return s.replace(/^\s*\/\/\s*@ts-nocheck\s*\n/, ''); }
 
-const expectedJs = normalizeEol(`// Maximum number of retries for API calls
-const MAX_RETRIES = 3;
-// Base URL for the API
-const API_BASE_URL = "https://api.example.com";`);
+const expectedJs = stripTsNoCheck(normalizeEol(readFileSync(join(resDir, 'constant_using_const.ts'), 'utf-8')));
 
 function assertEqual(a: string, b: string, msg?: string) {
   if (a !== b) {

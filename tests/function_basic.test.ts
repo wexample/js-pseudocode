@@ -5,17 +5,9 @@ import { CodeGenerator } from '../src/index.ts';
 const resDir = join(process.cwd(), 'tests', 'resources', 'item', 'function');
 
 function normalizeEol(s: string) { return s.replace(/\r\n/g, '\n'); }
+function stripTsNoCheck(s: string) { return s.replace(/^\s*\/\/\s*@ts-nocheck\s*\n/, ''); }
 
-const expectedJs = normalizeEol(`/**
- * Calculate the sum of two ints.
- *
- * @param a - The first operand.
- * @param b - The second operand.
- * @returns: The sum of the two numbers.
- */
-function add(a, b) {
-  // TODO: Implement function body
-}`);
+const expectedJs = stripTsNoCheck(normalizeEol(readFileSync(join(resDir, 'basic_function.ts'), 'utf-8')));
 
 function assertEqual(a: string, b: string, msg?: string) {
   if (a !== b) {
