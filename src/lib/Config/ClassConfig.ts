@@ -2,17 +2,23 @@ import { ClassPropertyConfig } from './ClassPropertyConfig.js';
 import { ClassMethodConfig } from './ClassMethodConfig.js';
 
 export class ClassConfig {
-  constructor({ name, description, properties, methods }) {
-    this.type = 'class';
+  type = 'class' as const;
+  name: string;
+  description: string | null;
+  properties: ClassPropertyConfig[];
+  methods: ClassMethodConfig[];
+
+  constructor({ name, description, properties, methods }:
+    { name: string; description?: string | null; properties?: ClassPropertyConfig[]; methods?: ClassMethodConfig[] }) {
     this.name = name;
     this.description = description || null;
     this.properties = properties || [];
     this.methods = methods || [];
   }
 
-  static fromConfig(data) {
-    const properties = Array.isArray(data.properties) ? data.properties.map(ClassPropertyConfig.fromConfig) : [];
-    const methods = Array.isArray(data.methods) ? data.methods.map(ClassMethodConfig.fromConfig) : [];
+  static fromConfig(data: any): ClassConfig {
+    const properties = Array.isArray(data.properties) ? data.properties.map((p: any) => ClassPropertyConfig.fromConfig(p)) : [];
+    const methods = Array.isArray(data.methods) ? data.methods.map((m: any) => ClassMethodConfig.fromConfig(m)) : [];
     return new ClassConfig({
       name: data.name,
       description: data.description,
@@ -21,8 +27,8 @@ export class ClassConfig {
     });
   }
 
-  toCode() {
-    const lines = [];
+  toCode(): string {
+    const lines: string[] = [];
     if (this.description) {
       lines.push('/**');
       for (const l of this.description.split('\n')) lines.push(` * ${l}`);
@@ -41,7 +47,7 @@ export class ClassConfig {
     }
     // methods
     for (const m of this.methods) {
-      const methodSrc = m.toCode().split('\n').map((l, i) => (i === 0 ? `  ${l}` : `  ${l}`));
+      const methodSrc = m.toCode().split('\n').map(l => `  ${l}`);
       for (const l of methodSrc) lines.push(l);
     }
     lines.push('}');

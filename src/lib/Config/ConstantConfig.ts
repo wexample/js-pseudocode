@@ -1,12 +1,16 @@
 export class ConstantConfig {
-  constructor({ name, value, description }) {
-    this.type = 'constant';
+  type = 'constant' as const;
+  name: string;
+  value: unknown;
+  description: string | null;
+
+  constructor({ name, value, description }: { name: string; value: unknown; description?: string | null }) {
     this.name = name;
     this.value = value;
-    this.description = description || null;
+    this.description = description ?? null;
   }
 
-  static fromConfig(data) {
+  static fromConfig(data: any): ConstantConfig {
     return new ConstantConfig({
       name: data.name,
       value: data.value,
@@ -14,8 +18,8 @@ export class ConstantConfig {
     });
   }
 
-  toCode() {
-    const lines = [];
+  toCode(): string {
+    const lines: string[] = [];
     if (this.description) {
       lines.push(`// ${this.description}`);
     }
