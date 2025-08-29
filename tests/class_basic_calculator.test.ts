@@ -7,7 +7,7 @@ const resDir = join(process.cwd(), 'tests', 'resources', 'item', 'class');
 function normalizeEol(s: string) { return s.replace(/\r\n/g, '\n'); }
 function stripTsNoCheck(s: string) { return s.replace(/^\s*\/\/\s*@ts-nocheck\s*\n/, ''); }
 
-const expectedJs = stripTsNoCheck(normalizeEol(readFileSync(join(resDir, 'basic_calculator.ts'), 'utf-8')));
+const expectedJs = stripTsNoCheck(normalizeEol(readFileSync(join(resDir, 'basic_calculator.ts'), 'utf-8'))).trim();
 
 function assertEqual(a: string, b: string, msg?: string) {
   if (a !== b) {
