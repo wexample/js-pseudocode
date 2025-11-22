@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from wexample_wex_addon_dev_php.workdir.php_package_workdir import PhpPackageWorkdir
+from wexample_wex_addon_dev_javascript.workdir.javascript_package_workdir import JavascriptPackageWorkdir
 
 
-class AppWorkdir(PhpPackageWorkdir):
+class AppWorkdir(JavascriptPackageWorkdir):
     pass
