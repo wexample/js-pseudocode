@@ -33,3 +33,5 @@ coverage-*.json
 coverage*.lcov
 *.pid
 *.pid.lock
+.npm
+.eslintcache

@@ -127,6 +127,7 @@ Refer to each package's documentation for specific version compatibility require
 
 ## Dependencies
 
+- js-yaml: 4.1.0
 
 
 # About us
