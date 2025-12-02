@@ -1,6 +1,6 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "test": "node --loader ts-node/esm tests/constant_using_const.test.ts && node --loader ts-node/esm tests/function_basic.test.ts && node --loader ts-node/esm tests/function_complex.test.ts && node --loader ts-node/esm tests/class_basic_calculator.test.ts"
