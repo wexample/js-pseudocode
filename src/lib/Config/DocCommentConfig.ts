@@ -1,20 +1,34 @@
-import { FunctionParameterConfig } from './FunctionParameterConfig.ts';
-import { FunctionReturnConfig } from './FunctionReturnConfig.ts';
+import type { FunctionParameterConfig } from './FunctionParameterConfig.ts';
+import type { FunctionReturnConfig } from './FunctionReturnConfig.ts';
 
 export class DocCommentConfig {
   description: string | null;
   parameters: FunctionParameterConfig[];
   return: FunctionReturnConfig | null;
 
-  constructor({ description = null, parameters = [], returnConfig = null }:
-    { description?: string | null; parameters?: FunctionParameterConfig[]; returnConfig?: FunctionReturnConfig | null }) {
+  constructor({
+    description = null,
+    parameters = [],
+    returnConfig = null,
+  }: {
+    description?: string | null;
+    parameters?: FunctionParameterConfig[];
+    returnConfig?: FunctionReturnConfig | null;
+  }) {
     this.description = description ?? null;
     this.parameters = parameters;
     this.return = returnConfig ?? null;
   }
 
-  static buildJSDoc({ description, parameters, returnConfig }:
-    { description?: string | null; parameters: FunctionParameterConfig[]; returnConfig: FunctionReturnConfig | null }): string {
+  static buildJSDoc({
+    description,
+    parameters,
+    returnConfig,
+  }: {
+    description?: string | null;
+    parameters: FunctionParameterConfig[];
+    returnConfig: FunctionReturnConfig | null;
+  }): string {
     const lines: string[] = ['/**'];
     if (description) {
       for (const line of description.split('\n')) {

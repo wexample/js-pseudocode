@@ -2,9 +2,12 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { CodeGenerator } from '../src/index.js';
 
-const pyFixtureDir = '/home/weeger/Desktop/WIP/WEB/WEXAMPLE/PIP/pip/pseudocode/tests/resources/item/function';
+const pyFixtureDir =
+  '/home/weeger/Desktop/WIP/WEB/WEXAMPLE/PIP/pip/pseudocode/tests/resources/item/function';
 
-function normalizeEol(s) { return s.replace(/\r\n/g, '\n'); }
+function normalizeEol(s) {
+  return s.replace(/\r\n/g, '\n');
+}
 
 const expectedJs = normalizeEol(`/**
  * Process an array of data with optional configuration.
@@ -29,5 +32,9 @@ function assertEqual(a, b, msg) {
 
 const yml = readFileSync(join(pyFixtureDir, 'complex_function.yml'), 'utf-8');
 const code = new CodeGenerator().generate(yml);
-assertEqual(normalizeEol(code.trim()), expectedJs, 'YAML -> JS complex function generation matches expected JS');
+assertEqual(
+  normalizeEol(code.trim()),
+  expectedJs,
+  'YAML -> JS complex function generation matches expected JS'
+);
 console.log('OK');

@@ -4,7 +4,11 @@ export class ConstantConfig {
   value: unknown;
   description: string | null;
 
-  constructor({ name, value, description }: { name: string; value: unknown; description?: string | null }) {
+  constructor({
+    name,
+    value,
+    description,
+  }: { name: string; value: unknown; description?: string | null }) {
     this.name = name;
     this.value = value;
     this.description = description ?? null;

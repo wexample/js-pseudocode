@@ -1,6 +1,6 @@
+import { DocCommentConfig } from './DocCommentConfig.ts';
 import { FunctionParameterConfig } from './FunctionParameterConfig.ts';
 import { FunctionReturnConfig } from './FunctionReturnConfig.ts';
-import { DocCommentConfig } from './DocCommentConfig.ts';
 
 export class FunctionConfig {
   type = 'function' as const;
@@ -9,8 +9,17 @@ export class FunctionConfig {
   parameters: FunctionParameterConfig[];
   return: FunctionReturnConfig | null;
 
-  constructor({ name, description, parameters, returnConfig }:
-    { name: string; description?: string | null; parameters?: FunctionParameterConfig[]; returnConfig?: FunctionReturnConfig | null }) {
+  constructor({
+    name,
+    description,
+    parameters,
+    returnConfig,
+  }: {
+    name: string;
+    description?: string | null;
+    parameters?: FunctionParameterConfig[];
+    returnConfig?: FunctionReturnConfig | null;
+  }) {
     this.name = name;
     this.description = description || null;
     this.parameters = parameters || [];
@@ -31,7 +40,7 @@ export class FunctionConfig {
   }
 
   toCode(): string {
-    const paramsSrc = this.parameters.map(p => p.toCode()).join(', ');
+    const paramsSrc = this.parameters.map((p) => p.toCode()).join(', ');
     const jsdoc = DocCommentConfig.buildJSDoc({
       description: this.description,
       parameters: this.parameters,

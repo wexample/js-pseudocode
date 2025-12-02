@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { CodeGenerator } from '../src/index.ts';
-import { readExpected, normalizeEol } from './utils/testHelpers.ts';
+import { normalizeEol, readExpected } from './utils/testHelpers.ts';
 
 const resDir = join(process.cwd(), 'tests', 'resources', 'item', 'function');
 
@@ -18,5 +18,9 @@ function assertEqual(a: string, b: string, msg?: string) {
 
 const yml = readFileSync(join(resDir, 'complex_function.yml'), 'utf-8');
 const code = new CodeGenerator().generate(yml);
-assertEqual(normalizeEol(code.trim()), expectedJs, 'YAML -> JS complex function generation matches expected JS');
+assertEqual(
+  normalizeEol(code.trim()),
+  expectedJs,
+  'YAML -> JS complex function generation matches expected JS'
+);
 console.log('OK');

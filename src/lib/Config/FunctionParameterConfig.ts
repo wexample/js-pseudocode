@@ -5,8 +5,19 @@ export class FunctionParameterConfig {
   optional: boolean;
   defaultValue: unknown;
 
-  constructor({ name, type, description, optional = false, defaultValue = undefined }:
-    { name: string; type?: string | null; description?: string | null; optional?: boolean; defaultValue?: unknown }) {
+  constructor({
+    name,
+    type,
+    description,
+    optional = false,
+    defaultValue = undefined,
+  }: {
+    name: string;
+    type?: string | null;
+    description?: string | null;
+    optional?: boolean;
+    defaultValue?: unknown;
+  }) {
     this.name = name;
     this.type = type || null;
     this.description = description || null;
