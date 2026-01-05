@@ -1,6 +1,6 @@
-# js_pseudocode
+# @wexample/js-pseudocode
 
-Version: 0.1.2
+Version: 0.1.3
 
 ## Table of Contents
 
@@ -111,7 +111,7 @@ Free to use in both personal and commercial projects.
 
 ## Integration in the Suite
 
-This package is part of the **Wexample Suite** — a collection of high-quality Python packages designed to work seamlessly together.
+This package is part of the Wexample Suite — a collection of high-quality, modular tools designed to work seamlessly together across multiple languages and environments.
 
 ### Related Packages
 
@@ -127,7 +127,7 @@ Refer to each package's documentation for specific version compatibility require
 
 ## Dependencies
 
-- js-yaml: <ConfigValue(type=str, value=4.1.0)>
+- js-yaml: 4.1.0
 
 
 # About us
