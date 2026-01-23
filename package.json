@@ -2,6 +2,9 @@
   "name": "@wexample/js-pseudocode",
   "version": "0.1.8",
   "type": "module",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "node --loader ts-node/esm tests/constant_using_const.test.ts && node --loader ts-node/esm tests/function_basic.test.ts && node --loader ts-node/esm tests/function_complex.test.ts && node --loader ts-node/esm tests/class_basic_calculator.test.ts"
   },
@@ -13,6 +16,19 @@
   },
   "dependencies": {
     "js-yaml": "4.1.0"
+  },
+  "exports": {
+    "./*": {
+      "types": "./src/*",
+      "default": "./src/*"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
   },
   "publishConfig": {
     "access": "public"
