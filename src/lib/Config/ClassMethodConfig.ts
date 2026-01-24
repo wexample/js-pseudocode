@@ -1,6 +1,6 @@
-import { DocCommentConfig } from './DocCommentConfig.ts';
-import { FunctionParameterConfig } from './FunctionParameterConfig.ts';
-import { FunctionReturnConfig } from './FunctionReturnConfig.ts';
+import { DocCommentConfig } from './DocCommentConfig';
+import { FunctionParameterConfig } from './FunctionParameterConfig';
+import { FunctionReturnConfig } from './FunctionReturnConfig';
 
 export class ClassMethodConfig {
   type = 'method' as const;

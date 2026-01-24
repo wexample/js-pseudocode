@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
-import { ClassConfig } from '../Config/ClassConfig.ts';
-import { ConstantConfig } from '../Config/ConstantConfig.ts';
-import { FunctionConfig } from '../Config/FunctionConfig.ts';
+import { ClassConfig } from '../Config/ClassConfig';
+import { ConstantConfig } from '../Config/ConstantConfig';
+import { FunctionConfig } from '../Config/FunctionConfig';
 
 export class CodeGenerator {
   generate(yamlText: string): string {

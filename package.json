@@ -1,11 +1,13 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "type": "module",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "node --loader ts-node/esm tests/constant_using_const.test.ts && node --loader ts-node/esm tests/function_basic.test.ts && node --loader ts-node/esm tests/function_complex.test.ts && node --loader ts-node/esm tests/class_basic_calculator.test.ts"
   },
   "devDependencies": {
@@ -19,14 +21,14 @@
   },
   "exports": {
     "./*": {
-      "types": "./src/*",
-      "default": "./src/*"
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
     }
   },
   "typesVersions": {
     "*": {
       "*": [
-        "src/*"
+        "dist/*"
       ]
     }
   },
