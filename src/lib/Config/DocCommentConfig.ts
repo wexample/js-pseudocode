@@ -1,5 +1,5 @@
-import type { FunctionParameterConfig } from './FunctionParameterConfig';
-import type { FunctionReturnConfig } from './FunctionReturnConfig';
+import type { FunctionParameterConfig } from './FunctionParameterConfig.js';
+import type { FunctionReturnConfig } from './FunctionReturnConfig.js';
 
 export class DocCommentConfig {
   description: string | null;

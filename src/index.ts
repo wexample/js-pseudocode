@@ -1,1 +1,1 @@
-export { CodeGenerator } from './lib/Generator/CodeGenerator';
+export { CodeGenerator } from './lib/Generator/CodeGenerator.js';

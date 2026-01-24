@@ -1,6 +1,6 @@
-import { DocCommentConfig } from './DocCommentConfig';
-import { FunctionParameterConfig } from './FunctionParameterConfig';
-import { FunctionReturnConfig } from './FunctionReturnConfig';
+import { DocCommentConfig } from './DocCommentConfig.js';
+import { FunctionParameterConfig } from './FunctionParameterConfig.js';
+import { FunctionReturnConfig } from './FunctionReturnConfig.js';
 
 export class FunctionConfig {
   type = 'function' as const;
