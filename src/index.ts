@@ -1,1 +1,1 @@
-export { CodeGenerator } from './lib/Generator/CodeGenerator.ts';
+export { CodeGenerator } from './lib/Generator/CodeGenerator';
