@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { CodeGenerator } from '../src/index.ts';
-import { normalizeEol, readExpected } from './utils/testHelpers.ts';
+import { CodeGenerator } from '../src/index.js';
+import { normalizeEol, readExpected } from './utils/testHelpers.js';
 
 const resDir = join(process.cwd(), 'tests', 'resources', 'item', 'function');
 
