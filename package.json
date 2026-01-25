@@ -1,10 +1,7 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
@@ -19,6 +16,13 @@
   "dependencies": {
     "js-yaml": "4.1.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/wexample/js-pseudocode",
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./*": {
       "types": "./dist/*.d.ts",
@@ -31,9 +35,5 @@
         "dist/*"
       ]
     }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "https://github.com/wexample/js-pseudocode"
+  }
 }
