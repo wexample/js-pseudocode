@@ -1,6 +1,6 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "type": "module",
   "scripts": {
     "build": "npm run clean && tsc",
@@ -26,8 +26,8 @@
   ],
   "exports": {
     "./*": {
-      "types": "./dist/*",
-      "default": "./dist/*"
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
     }
   },
   "sideEffects": false
