@@ -1,6 +1,6 @@
 # @wexample/js-pseudocode
 
-Version: 0.1.17
+Version: 0.1.18
 
 ## Table of Contents
 
