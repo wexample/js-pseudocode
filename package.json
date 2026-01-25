@@ -1,6 +1,6 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -19,5 +19,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/wexample/js-pseudocode"
+  "repository": "https://github.com/wexample/js-pseudocode",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  }
 }
