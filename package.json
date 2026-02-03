@@ -3,10 +3,9 @@
   "version": "0.1.21",
   "type": "module",
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "tsc --noEmit",
     "prepublishOnly": "npm run build",
-    "test": "node --loader ts-node/esm tests/constant_using_const.test.ts && node --loader ts-node/esm tests/function_basic.test.ts && node --loader ts-node/esm tests/function_complex.test.ts && node --loader ts-node/esm tests/class_basic_calculator.test.ts",
-    "clean": "rm -rf dist"
+    "test": "node --loader ts-node/esm tests/constant_using_const.test.ts && node --loader ts-node/esm tests/function_basic.test.ts && node --loader ts-node/esm tests/function_complex.test.ts && node --loader ts-node/esm tests/class_basic_calculator.test.ts"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
@@ -22,12 +21,12 @@
   },
   "repository": "https://github.com/wexample/js-pseudocode",
   "files": [
-    "dist"
+    "src"
   ],
   "exports": {
     "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
+      "types": "./src/*.ts",
+      "default": "./src/*.ts"
     }
   },
   "sideEffects": false
