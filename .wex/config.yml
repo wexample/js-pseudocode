@@ -7,7 +7,7 @@ git:
 global:
   name: js_pseudocode
   type: app
-  version: 0.1.36
+  version: 0.1.37
 wex:
   migration: 1
   version: 6.0.133
