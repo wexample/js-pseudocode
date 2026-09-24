@@ -1,6 +1,6 @@
 {
   "name": "@wexample/js-pseudocode",
-  "version": "0.1.39",
+  "version": "0.1.40",
   "type": "module",
   "scripts": {
     "build": "tsc --noEmit",
